@@ -57,7 +57,7 @@ function NavbarHeader() {
             <Link id="nav-link" to="garden">Garden</Link>
             <Navbar.Brand>{username || ""}</Navbar.Brand>
             {localStorage.getItem("username")?
-       ( <Button style={{marginRight: "2vmin", backgroundColor:"#DF8210", borderColor: "white"}} variant="warning" type="submit" onClick={()=>logOut()}>
+       ( <Button style={{marginRight: "2vmin", backgroundColor:"#DF8210", borderColor: "white", color:"white"}} variant="warning" type="submit" onClick={()=>logOut()}>
                 Log Out
         </Button>) : ""}
           </Nav>

@@ -112,6 +112,18 @@ class EditPlant(UserPermissions):
     
     
 
+class FertilizePlant(UserPermissions):
 
+    def post(self, request, plant_id):
+        try:
+            plant = get_object_or_404(Plant, id=plant_id)
+
+            plant.last_fertilized = timezone.now()
+
+            plant.save()
+            return Response({"message": f"{plant.common_name} has been fertilized!"}, status=HTTP_204_NO_CONTENT)
+        
+        except Exception as e:
+            return Response( {"error": str(e)},status=HTTP_400_BAD_REQUEST)
 
     

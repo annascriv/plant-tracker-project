@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card'
 import Container from "react-bootstrap/esm/Container.js";
+import CardImg from "react-bootstrap/esm/CardImg.js";
 import '../styles/PlantPageStyle.css'
 
 
@@ -160,7 +161,7 @@ export const UserProfilePage = () => {
         <Row style={{alignContent:"center"}}>
         <Card id="profile-card">
         <Card.Body>
-            {/* <CardImg src={userProfile.profile_picture}></CardImg> */}
+            <img src={userProfile.profile_picture}></img>
             <Card.Title>{userProfile.username}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">{userProfile.display_name}</Card.Subtitle>
             <Card.Subtitle className="mb-2 text-muted">{userProfile.age}</Card.Subtitle>
@@ -169,13 +170,13 @@ export const UserProfilePage = () => {
             </Card.Text>
         </Card.Body>
         <Row>
-        <Button id="edit-profile-button"  variant="primary" onClick={()=> setShowForm(!showForm)}>Edit Profile</Button>
-        <Button id="delete-account-button" variant="danger" onClick={(e)=>deleteAccount(e)}>Delete Account</Button>
+        <Button id="edit-profile-button"  onClick={()=> setShowForm(!showForm)}>Edit Profile</Button>
+        <Button id="delete-account-button"  onClick={(e)=>deleteAccount(e)}>Delete Account</Button>
         </Row>
-        {/* <div>
-            <input type="file" accept="image/*" onChange={(e)=>handlePicUpload(e)}/>
-            <button onClick={()=>handlePicSubmit()}>upload</button>
-        </div> */}
+        <Form>
+            <Form.Control type="file" accept="image/*" onChange={(e)=>handlePicUpload(e)}/>
+            <Button onClick={()=>handlePicSubmit()}>upload</Button>
+        </Form>
         </Card>
         </Row>
             )

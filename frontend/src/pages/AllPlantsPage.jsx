@@ -82,7 +82,7 @@ export const PlantPage = () => {
         <>
         <Row style={{width:'60vmin', marginTop:"2vmin"}}>
     
-        <Form className="searchbar" style={{display:"flex", marginLeft:"2vmin"}} onSubmit={(e)=> [e.preventDefault(), navigate(`/results/${userInput}/`)]}>
+        <Form className="searchbar" style={{display:"flex", marginLeft:"2vmin", opacity:"0.7"}} onSubmit={(e)=> [e.preventDefault(), navigate(`/results/${userInput}/`)]}>
         <Form.Control type="text" placeholder="Species" onChange={(e)=> setUserInput(e.target.value)} value={userInput}/>
         <Button type="submit" style={{backgroundColor:"gray", borderColor:"white"}}>Search</Button>
         
@@ -97,20 +97,20 @@ export const PlantPage = () => {
 
             </Row>
             {windowWidth > 1200 ? (
-                <Row>
-            <Button className="row-of-buttons" style={{height: "5vmin", margin: '2vmin',width:'18vmin', borderColor:"white", backgroundColor: "gray"}} onClick={()=>clearFilters()}>Clear Filters</Button>
-            <label style={{margin:".5vmin"}}><b> Filter your search:</b></label>
-            <Button className="row-of-buttons" style={{height: "6vmin", margin: '2vmin',width:'13vmin', borderColor:"white", backgroundColor: "#BAA3D9"}} onClick={()=> setFilters((prevFilters)=>prevFilters+'&cycle=perennial')}>Perennials</Button>
+                <Row id="filter-container">
+            <Button id="row-of-buttons"  onClick={()=>clearFilters()}>Clear Filters</Button>
+            <label style={{margin:"0.5vmin", marginLeft:"0vmin"}}><b> Filter your search:</b></label>
+            <Button id="row-of-buttons" style={{marginLeft:"0vmin"}} onClick={()=> setFilters((prevFilters)=>prevFilters+'&cycle=perennial')}>Perennials</Button>
             
-            <Button className="row-of-buttons" style={{height: "6vmin", margin: '2vmin', width: '12vmin', borderColor: "white", backgroundColor: "#BEC786"}} onClick={()=> setFilters((prevFilters)=>prevFilters+'&cycle=annual')}>Annuals</Button>
+            <Button id="row-of-buttons" onClick={()=> setFilters((prevFilters)=>prevFilters+'&cycle=annual')}>Annuals</Button>
             
-            <Button className="row-of-buttons" style={{height: "6vmin", margin: '2vmin', width: '20vmin', borderColor: "white", backgroundColor: "#D598C6"}} onClick={()=> setFilters((prevFilters)=>prevFilters+'&sunlight=full_sun')}>Direct Sunlight</Button>
+            <Button id="row-of-buttons"  onClick={()=> setFilters((prevFilters)=>prevFilters+'&sunlight=full_sun')}>Direct Sunlight</Button>
             
-            <Button className="row-of-buttons" style={{height: "6vmin", margin: '2vmin', width: '12vmin', borderColor: "white", backgroundColor: "#98CFD5"}} onClick={()=> setFilters((prevFilters)=>prevFilters+'&sunlight=full_shade')}>Shade</Button>
+            <Button id="row-of-buttons"  onClick={()=> setFilters((prevFilters)=>prevFilters+'&sunlight=full_shade')}>Shade</Button>
             
-            <Button className="row-of-buttons" style={{height: "6vmin", margin: '2vmin', width: '15vmin', borderColor: "white", backgroundColor: "#D598C6"}} onClick={()=> setFilters((prevFilters)=>prevFilters+'&edible=1')}>Edible</Button>
+            <Button id="row-of-buttons"  onClick={()=> setFilters((prevFilters)=>prevFilters+'&edible=1')}>Edible</Button>
             
-            <Button className="row-of-buttons" style={{height: "6vmin", margin: '2vmin', width: '20vmin', borderColor: "white", backgroundColor: "#BAA3D9"}} onClick={()=> setFilters((prevFilters)=>prevFilters+'&watering=minimum')}>Low Watering</Button>
+            <Button id="row-of-buttons"  onClick={()=> setFilters((prevFilters)=>prevFilters+'&watering=minimum')}>Low Watering</Button>
             </Row>
             )
         :

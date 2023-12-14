@@ -110,8 +110,8 @@ export const MyGarden = () => {
 }
 
 
-            <Row style={{textAlign: "center", marginTop:"10vmin"}}>
-            <h2><b>My Garden</b></h2>
+            <Row style={{textAlign: "center", marginTop:"20vmin", fontFamily:"Whisper"}}>
+            <h1><b>My Garden</b></h1>
             </Row>
             <Row>
             {

@@ -94,6 +94,23 @@ useEffect(()=> {
         }
     }
 
+    const fertilizePlant = async(e) => {
+        e.preventDefault();
+
+        let plant_id = plant.id
+        console.log(plant_id)
+
+        let response = await api.post(`garden/fertilize-plant/${plant_id}/`, null, {
+            headers: {
+                Authorization: `Token ${token}`
+            }
+        })
+
+        if (response.status === 204) {
+            window.location.reload()
+        }
+    }
+
   return (
     <>
     <Card id="myplants-card">
@@ -121,12 +138,17 @@ useEffect(()=> {
             </ul>
         </div>
         <div>
-            <b>Last watered:</b> {format( new Date(plant.last_watered), 'MMMM dd, yyyy hh:mm a') || "This plant hasn't been watred yet!"}
+            <b>Last watered:</b> {format( new Date(plant.last_watered), 'MMMM dd, yyyy hh:mm a')}
+        </div>
+        <div>
+            <b>Last fertilized: </b> {format( new Date(plant.last_fertilized), 'MMMM dd, yyyy hh:mm a')}
         </div>
         
-        <Button style={{borderColor: "white", backgroundColor: "#D598C6", opacity:".7"}} onClick={(e)=>waterPlant(e)}>Water {plant.common_name}</Button>
-        <Button style={{ backgroundColor: "#DF8221", borderColor: "white", opacity:".7"}} onClick={(e)=> DeletePlant(e)}>Delete</Button>
-        <Button style={{ backgroundColor: "gray", borderColor: "white", opacity:".7"}} variant = "secondary" onClick={()=>setShowEditForm(!showEditForm)}>Edit</Button>
+        <Button id="water-button" onClick={(e)=>waterPlant(e)}>Water {plant.common_name}</Button>
+        <Button id="fertilize-button" onClick={(e)=>fertilizePlant(e)}>Fertilize {plant.common_name}</Button>
+        <br/>
+        <Button id="edit-plant-button" onClick={()=>setShowEditForm(!showEditForm)}>Edit</Button>
+        <Button id="delete-plant-button" onClick={(e)=> DeletePlant(e)}>Delete</Button>
       </Card.Body>
     </Card>
 

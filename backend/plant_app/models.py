@@ -23,3 +23,5 @@ class Plant(models.Model):
 
     last_watered = models.DateTimeField(null=True, blank=True, default=timezone.now)
 
+    last_fertilized = models.DateTimeField(null=True, blank=True, default=timezone.now)
+
