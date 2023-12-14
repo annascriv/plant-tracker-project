@@ -22,6 +22,8 @@ export const UserProfilePage = () => {
 
     let token = localStorage.getItem("token")
 
+    let profileURL = "http://127.0.0.1:8000/"
+
     const navigate = useNavigate();
 
  
@@ -108,7 +110,7 @@ export const UserProfilePage = () => {
 
         data.append("profile_picture", profilepic)
 
-        let response = await api.post('users/profile-pic/', data, {
+        let response = await api.post('users/profile-picture/', data, {
             headers: {
                 Authorization: `Token ${token}`,
                 "Content-Type": "multipart/form-data"
@@ -131,7 +133,7 @@ export const UserProfilePage = () => {
         <>
             <Container style={{alignContent: "center"}}>
             {showForm ? (
-
+            <div>
             <Form onSubmit={(e)=> updateProfile(e)}>
             <Form.Group className="mb-3" controlId="formNewUsername">
             <Form.Label>Username</Form.Label>
@@ -153,6 +155,12 @@ export const UserProfilePage = () => {
             Submit
             </Button>
             </Form>
+            {/* Profile Picture Upload Form */}
+                <Form>
+                    <Form.Control style={{width:"30vmin"}} type="file" accept="image/*" onChange={(e)=>handlePicUpload(e)}/>
+                    <Button onClick={()=>handlePicSubmit()}>upload</Button>
+                </Form>
+            </div>
             )
             :
             (
@@ -161,8 +169,10 @@ export const UserProfilePage = () => {
         <Row style={{alignContent:"center"}}>
         <Card id="profile-card">
         <Card.Body>
-            <img src={userProfile.profile_picture}></img>
-            <Card.Title>{userProfile.username}</Card.Title>
+            <div style={{float:"left", marginRight:"3vmin"}}>
+            <CardImg style={{height:"15rem", width:"12rem", borderRadius:"15vmin", border:"2px solid black"}} src={profileURL+userProfile.profile_picture}></CardImg>
+            </div>
+            <Card.Title style={{marginTop:"5vmin"}}>{userProfile.username}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">{userProfile.display_name}</Card.Subtitle>
             <Card.Subtitle className="mb-2 text-muted">{userProfile.age}</Card.Subtitle>
             <Card.Text>
@@ -173,10 +183,6 @@ export const UserProfilePage = () => {
         <Button id="edit-profile-button"  onClick={()=> setShowForm(!showForm)}>Edit Profile</Button>
         <Button id="delete-account-button"  onClick={(e)=>deleteAccount(e)}>Delete Account</Button>
         </Row>
-        <Form>
-            <Form.Control type="file" accept="image/*" onChange={(e)=>handlePicUpload(e)}/>
-            <Button onClick={()=>handlePicSubmit()}>upload</Button>
-        </Form>
         </Card>
         </Row>
             )

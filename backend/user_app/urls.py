@@ -12,7 +12,7 @@ urlpatterns = [
     path('info/', User_info.as_view(), name = 'info'),
     path('logout/', Log_out.as_view(), name='logout'),
     path('delete/', Delete_user.as_view(), name='delete'),
-    path('profile-pic/', UserProfilePicture.as_view(), name='profile-picture')
+    path('profile-picture/', UserProfilePicture.as_view(), name='profile-picture')
 ] 
 
 if settings.DEBUG:
