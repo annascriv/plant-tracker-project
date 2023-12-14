@@ -1,0 +1,152 @@
+/* body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+  } */
+
+
+#hometext-container {
+    opacity: 1;
+    margin-top: 12vmin;
+    z-index: 2;
+    border-radius: 5%;
+    position: relative;
+
+
+} 
+
+#nav-link {
+  margin: 1vmin;
+  color: #98CFD5;
+}
+
+body {
+  background-image:url('./images/F3589D8F-00A8-4F08-9A23-31086B99E806_1_201_a.jpeg');
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+ 
+
+  
+}
+
+@font-face {
+  font-family: "Whisper";
+  src: url('./fonts/Whisper-Regular.ttf') format("truetype");
+}
+
+
+
+.typed {
+  font-family: Whisper;
+  opacity: .5;
+  font-size: 200px;
+  margin-left: 20vmin;
+  overflow: hidden;
+  white-space: nowrap;
+  width:0;
+  animation: typing;
+  animation-duration: 7s;
+  animation-timing-function: steps(100, end);
+  animation-fill-mode: forwards;
+}
+
+@media (max-width:1000px)  {
+  .typed {
+    font-size: 100px;
+    align-items: center;
+    margin-left:20vmin;
+  }  
+
+}
+
+@media (max-width:500px) {
+  .typed {
+    font-size:50px;
+    margin-left:18vmin;
+    margin-top:40vmin;
+  }
+}
+
+.login-button-container {
+  
+  align-content: center;
+  margin:10vmin;
+}
+
+.button-box {
+
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin-left: 10vmin;
+  
+}
+
+#login-button {
+  display: flex;
+  align-items: center;
+  margin: 2vmin;
+  height:5vmin;
+  margin-left:45vmin; 
+  width:8vmin;
+  margin-right:1vmin;
+  background-color: #5DBA9D;
+  border-color:white;
+  
+}
+
+@media (max-width:1000px) {
+  
+  #login-button {
+  margin-left: 30vmin;
+  }
+}
+
+@media (max-width:500px) {
+  #login-button {
+    width:15vmin;
+    height:8vmin;
+    margin-left:26vmin;
+    font-size: small;
+  }
+
+}
+
+#signup-button {
+  display: flex;
+  align-items: center;
+  margin: 2vmin;
+  height:5vmin;
+  width:12vmin;
+  background-color: #DF8221;
+  border-color: white;
+}
+
+@media (max-width:650px) {
+  #signup-button {
+    font-size: smaller;
+    width:14vmin;
+  }
+}
+
+@media (max-width:500px) {
+  #signup-button {
+    width:20vmin;
+    margin-left:0vmin;
+    height:8vmin;
+    font-size: small;
+  }
+}
+
+
+
+@keyframes typing {
+  from {width:0}
+  to {width:100%}
+}
+

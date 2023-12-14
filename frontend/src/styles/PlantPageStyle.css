@@ -1,0 +1,109 @@
+
+
+#add-button {
+    background-color: #5DBA9D; 
+    border-color: white; 
+    width:17vmin;
+}
+
+
+@media (max-width:800px) {
+    #add-button {
+        font-size:smaller;
+        width:20vmin;
+    }
+}
+
+@media (max-width:500px) {
+    #add-button {
+        font-size: small;
+        width:30vmin;
+    }
+}
+
+#details-button {
+    background-color: #98CFD5; 
+        border-color: white;
+}
+
+@media (max-width:800px) {
+    #details-button {
+        font-size:smaller;
+        width:20vmin;
+    }
+}
+
+@media (max-width:500px) {
+    #details-button {
+        font-size: small;
+        width:30vmin;
+    }
+}
+
+#return-button {
+        width:20vmin; 
+        margin-bottom:2vmin; 
+        margin-top:2vmin; 
+        background-color:gray; 
+        border-color:white;
+}
+
+@media (max-width:800px) {
+    #return-button {
+        font-size:smaller;
+        width:20vmin;
+    }
+}
+
+@media (max-width:500px) {
+    #return-button {
+        font-size: small;
+        width:30vmin;
+    }
+}
+
+#edit-profile-button {
+        width: 15vmin; 
+        background-color: #5DBA9D; 
+        border-color:white;
+}
+
+#delete-account-button {
+        width: 20vmin; 
+        border-color:white; 
+        background-color:#DF8221;
+}
+
+@media (max-width:800px) {
+    #edit-profile-button, #delete-account-button {
+        font-size:smaller;
+        width:20vmin;
+    }
+}
+
+@media (max-width:500px) {
+    #edit-profile-button, #delete-account-button {
+        font-size: small;
+        width:30vmin;
+        height:8vmin;
+        
+    }
+}
+
+#myplants-card, #plant-card {
+        width: 18rem; 
+        margin: 1vmin; 
+        background-color:white;
+}
+
+@media (max-width:500px) {
+    #myplants-card, #plant-card {
+        margin-left:12vmin;
+    }
+}
+
+#profile-card {
+        width: 100rem; 
+        margin-bottom:5vmin;
+}
+
