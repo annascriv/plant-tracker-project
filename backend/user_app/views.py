@@ -10,12 +10,14 @@ from rest_framework.authtoken.models import Token
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.parsers import MultiPartParser
+from django.shortcuts import get_object_or_404
 
 
 
 from .models import User
 from .serializers import UserSerializer
 from favorites_app.models import Garden
+from favorites_app.serializers import GardenSerializer
 
 # Create your views here.
 
@@ -115,3 +117,24 @@ class UserProfilePicture(UserPermissions):
         ser_user = UserSerializer(user)
 
         return Response(ser_user.data, status=HTTP_201_CREATED)
+    
+
+class All_users(UserPermissions):
+    def get(self, request):
+
+        users = User.objects.all()
+        ser_users = UserSerializer(users, many=True)
+
+        return Response(ser_users.data)
+    
+
+class Other_users_garden(UserPermissions):
+    def get(self, request, username):
+
+        user = get_object_or_404(User, username=username)
+
+        garden = get_object_or_404(Garden, gardener = user)
+
+        ser_garden = GardenSerializer(garden)
+
+        return Response(ser_garden.data)
