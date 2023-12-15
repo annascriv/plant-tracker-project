@@ -17,7 +17,8 @@
 } 
 
 #nav-link {
-  margin: 1vmin;
+  margin-top: 1vmin;
+  margin-right: 3vmin;
   color: #98CFD5;
 }
 
@@ -45,7 +46,7 @@ body {
   font-family: Whisper;
   opacity: .5;
   font-size: 200px;
-  margin-left: 20vmin;
+  margin-left: 25vmin;
   overflow: hidden;
   white-space: nowrap;
   width:0;
@@ -64,7 +65,7 @@ body {
 
 }
 
-@media (max-width:500px) {
+@media (max-width:750px) {
   .typed {
     font-size:50px;
     margin-left:18vmin;
@@ -92,7 +93,7 @@ body {
   align-items: center;
   margin: 2vmin;
   height:5vmin;
-  margin-left:45vmin; 
+  margin-left:55vmin; 
   width:8vmin;
   margin-right:1vmin;
   background-color: #5DBA9D;
@@ -103,7 +104,8 @@ body {
 @media (max-width:1000px) {
   
   #login-button {
-  margin-left: 30vmin;
+  margin-left: 25vmin;
+  font-size: smaller;
   }
 }
 
@@ -122,15 +124,16 @@ body {
   align-items: center;
   margin: 2vmin;
   height:5vmin;
-  width:12vmin;
+  width:10vmin;
   background-color: #DF8221;
   border-color: white;
 }
 
-@media (max-width:650px) {
+@media (max-width:750px) {
   #signup-button {
     font-size: smaller;
-    width:14vmin;
+    width:11vmin;
+    
   }
 }
 

@@ -49,15 +49,16 @@ function NavbarHeader() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-          <Nav.Item style={{marginRight: "38vmin"}}><h2>bloom buddy</h2></Nav.Item>
+          <Nav.Item style={{marginRight: "3vmin"}}><h1>bloom buddy</h1></Nav.Item>
 
             <Link id="nav-link" to="/">Home</Link>
             {/* <Link id="nav-link" to="profile">Profile</Link> */}
              <Link id="nav-link" to="plants">Discover</Link>
             <Link id="nav-link" to="garden">Garden</Link>
-            <Navbar.Brand>{username || ""}</Navbar.Brand>
+            <Link id="nav-link" to="allusers">Gardener Central</Link>
+            <Navbar.Brand style={{marginLeft:"45vmin"}}>{username || ""}</Navbar.Brand>
             {localStorage.getItem("username")?
-       ( <Button style={{marginRight: "2vmin", backgroundColor:"#DF8210", borderColor: "white", color:"white"}} variant="warning" type="submit" onClick={()=>logOut()}>
+       ( <Button style={{marginRight: "0vmin", backgroundColor:"#DF8210", borderColor: "white", color:"white", maxHeight:"7vmin"}} variant="warning" type="submit" onClick={()=>logOut()}>
                 Log Out
         </Button>) : ""}
           </Nav>

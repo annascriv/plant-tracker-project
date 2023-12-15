@@ -27,6 +27,8 @@ export const HomePage = () => {
             <h3>welcome! </h3>
             <p>Here at bloom buddy, we are passionate about helping you keep your plants cared for and loved. 
                 <br/> <br/> Create a new card for each plant in your collection and save it to your <Link to="garden">Garden</Link>, or explore the <Link to="plants">Discover Plants</Link> page to find some fresh inspo!
+                <br/><br/> You can also explore <Link to="allusers">Gardener Central</Link> to find your friends and view the plants in their garden.
+            
             </p>
 
 
@@ -34,14 +36,16 @@ export const HomePage = () => {
         :
         (
             <Container className="login-button-container" style={{alignContent: "center"}}>
-                <div style={{display:"inline-block"}}>
+            
+                <Row >
                     <h1 className="typed">bloom buddy</h1>
 
-                </div>
+                </Row>
             <Row className="button-box" style={{marginTop:"5vmin"}}>
             <Button id="login-button" variant="primary" onClick={handleLoginButton}>Login</Button>
             <Button id="signup-button" variant="danger" onClick={handleSignupButton}>Sign up</Button>
             </Row>
+            
             </Container>
         )}
         </Container>

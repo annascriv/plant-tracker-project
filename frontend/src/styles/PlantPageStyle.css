@@ -154,3 +154,9 @@
         font-size: small;
         margin-bottom: 1vmin;
 }
+
+#form-button {
+    margin: 1vmin;
+    background-color: gray;
+    border-color: white;
+}

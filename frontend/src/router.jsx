@@ -8,6 +8,8 @@ import { PlantPage } from './pages/AllPlantsPage';
 import { MyGarden } from './pages/MyGarden';
 import { PlantDetailsPage } from './pages/PlantDetailsPage';
 import { ResultsPage } from './pages/ResultsPage';
+import { AllUsersPage } from './pages/AllUsersPage';
+import { OtherUserGarden } from './pages/OtherUserGarden';
 
 export const router = createBrowserRouter([
     {
@@ -45,6 +47,14 @@ export const router = createBrowserRouter([
             {
                 path: 'results/:name',
                 element: <ResultsPage/>
+            },
+            {
+                path: 'allusers/',
+                element: <AllUsersPage/>
+            },
+            {
+                path: 'gardens/:username/',
+                element: <OtherUserGarden/>
             }
         ]
     }

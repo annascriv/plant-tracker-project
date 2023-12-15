@@ -39,7 +39,6 @@ export const UserProfilePage = () => {
                 }
             })
             setUserProfile(response.data)
-            console.log(response.data)
   
         }
 
@@ -151,14 +150,15 @@ export const UserProfilePage = () => {
             <Form.Label>Bio</Form.Label>
             <Form.Control type="text"  placeholder={userProfile.bio} onChange={(e)=>setNewBio(e.target.value)}/>
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button id="form-button" variant="primary" type="submit">
             Submit
             </Button>
+            <Button id="form-button" onClick={()=>setShowForm(!showForm)}>Cancel</Button>
             </Form>
             {/* Profile Picture Upload Form */}
                 <Form>
-                    <Form.Control style={{width:"30vmin"}} type="file" accept="image/*" onChange={(e)=>handlePicUpload(e)}/>
-                    <Button onClick={()=>handlePicSubmit()}>upload</Button>
+                    <Form.Control id="form-button" style={{width:"30vmin"}} type="file" accept="image/*" onChange={(e)=>handlePicUpload(e)}/>
+                    <Button id="form-button" onClick={()=>handlePicSubmit()}>upload</Button>
                 </Form>
             </div>
             )

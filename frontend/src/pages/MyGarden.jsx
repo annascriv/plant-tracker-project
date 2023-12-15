@@ -97,20 +97,21 @@ export const MyGarden = () => {
             <Form.Label>Any notes for later?</Form.Label>
             <Form.Control type="text"  placeholder="Notes..." onChange={(e)=>setNotes(e.target.value)}/>
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button id="form-button" variant="primary" type="submit">
             Submit
             </Button>
+            <Button id="form-button" onClick={()=>setShowForm(!showForm)}>Cancel</Button>
             </Form>
 
 )
 :
 (
-        <Button style={{backgroundColor: "#5DBA9D", borderColor: "white"}} onClick={()=>setShowForm(!showForm)}>Create A New Plant!</Button> 
+        <Button style={{backgroundColor: "#5DBA9D", borderColor: "white", marginTop:"20vmin"}} onClick={()=>setShowForm(!showForm)}>Create A New Plant!</Button> 
 )
 }
 
 
-            <Row style={{textAlign: "center", marginTop:"20vmin", fontFamily:"Whisper"}}>
+            <Row style={{textAlign: "center", marginTop:"0vmin", fontFamily:"Whisper"}}>
             <h1><b>My Garden</b></h1>
             </Row>
             <Row>
