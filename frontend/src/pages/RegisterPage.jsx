@@ -28,7 +28,7 @@ export const RegisterPage = () => {
 
         let response = await api.post("users/signup/", data)
         .catch((err)=> {
-            console.log("something went wrong", err)
+            alert("Please select a unique username.")
         })
 
         let user = response.data.user;
@@ -73,9 +73,10 @@ export const RegisterPage = () => {
                 <Form.Control type="text" placeholder="Bio" onChange={(e)=>setBio(e.target.value)}/>
             </Form.Group>
             
-            <Button variant="primary" type="submit">
+            <Button style={{backgroundColor:"gray", borderColor:"white", margin:"1vmin"}} type="submit">
                 Submit
             </Button>
+            <Button style={{backgroundColor:"gray", borderColor:"white", margin:"1vmin"}} onClick={()=>navigate("/")}>Cancel</Button>
             </Form>
 
             

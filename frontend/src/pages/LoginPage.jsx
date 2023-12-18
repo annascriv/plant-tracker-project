@@ -31,7 +31,6 @@ export const LoginPage = () => {
         let token = response.data.token;
 
         if (token !== undefined) {
-            console.log("token:", token)
 
             localStorage.setItem("token", token)
             localStorage.setItem("username", username)
@@ -71,6 +70,7 @@ export const LoginPage = () => {
    <Button style={{backgroundColor:"#5DBA9D", borderColor: "white"}} variant="primary" type="submit">
        Submit
    </Button>
+   <Button style={{backgroundColor:"#5DBA9D", borderColor: "white", margin:"1vmin"}} onClick={()=>navigate("/")}>Cancel</Button>
    </Form>
    </div>
 )

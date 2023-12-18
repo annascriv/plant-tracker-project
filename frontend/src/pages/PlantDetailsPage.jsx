@@ -25,7 +25,7 @@ export const PlantDetailsPage = () => {
         })   
 
         setPlant(response.data)
-        console.log(response.data)
+        
     }
 
     useEffect(()=> {
