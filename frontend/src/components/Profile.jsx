@@ -170,7 +170,7 @@ export const UserProfilePage = () => {
         <Card id="profile-card">
         <Card.Body>
             <div style={{float:"left", marginRight:"3vmin"}}>
-            <CardImg style={{height:"15rem", width:"12rem", borderRadius:"15vmin", border:"2px solid black"}} src={profileURL+userProfile.profile_picture}></CardImg>
+            <CardImg style={{height:"15rem", width:"12rem", borderRadius:"15vmin", border:"2px solid black"}} src={userProfile.profile_picture ? profileURL+userProfile.profile_picture : null}></CardImg>
             </div>
             <Card.Title style={{marginTop:"5vmin"}}>{userProfile.username}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">{userProfile.display_name}</Card.Subtitle>

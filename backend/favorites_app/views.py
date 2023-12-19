@@ -23,27 +23,8 @@ class Garden_view(UserPermissions, APIView):
         except Garden.DoesNotExist:
             return Response({"detail": "Garden was not found."})
         
-
-    def post(self, request):
-
-        try:
-            user = request.user
-
-            plant_id = request.data.get("plant_id")
-            plant_instance = get_object_or_404(Plant, id=plant_id)
-
-            garden_instance, created = Garden.objects.get_or_create(gardener = user)
-
-            garden_plant_instance = Garden_plants.objects.create(garden = garden_instance, plant=plant_instance)
-
-            ser_garden = GardenSerializer(garden_instance)
-
-            return Response(ser_garden.data, status=HTTP_201_CREATED)            
-        except Plant.DoesNotExist as e:
-            return Response({"detail": "Plant was not found"}, status=HTTP_404_NOT_FOUND)
         
 
-        
 
 
 class New_Plant(UserPermissions):

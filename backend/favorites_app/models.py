@@ -10,12 +10,6 @@ class Garden(models.Model):
 
 
 
-    # name = models.CharField(max_length=255, default=None, null=True)
-
-    # watered = models.BooleanField(default=False)
-
-    # notes = models.TextField(blank=True, null=True)
-
 class Garden_plants(models.Model):
 
     garden = models.ForeignKey(Garden, related_name="garden_plants", on_delete=models.CASCADE, default=None)
